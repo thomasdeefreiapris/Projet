@@ -1,0 +1,13 @@
+# /etc/sudoers.d/projet - Exigence C3
+# Copié par installer.sh (droits 0440, root:root), validé par "visudo -cf".
+# ATTENTION : un fichier de /etc/sudoers.d/ dont le nom contient un point
+# ou finit par ~ est IGNORÉ par sudo. D'où le nom "projet", sans extension.
+
+# Membres du groupe admins : tous les droits root (mot de passe demandé)
+%admins ALL=(ALL:ALL) ALL
+
+# Compte support : uniquement analyse_logs.sh, en root.
+# NOPASSWD car support n'a pas de mot de passe (connexion par clé uniquement).
+# Le script appartient à root et n'est modifiable que par root : sinon support
+# pourrait le réécrire et exécuter n'importe quoi en root.
+support ALL=(root) NOPASSWD: /usr/local/sbin/analyse_logs.sh

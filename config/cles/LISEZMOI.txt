@@ -1,0 +1,15 @@
+Clés PUBLIQUES des comptes du groupe acces_ssh, une par compte :
+
+    config/cles/<login>.pub      ex. : fmansouri.pub, admin2.pub, support.pub
+
+creer_comptes.sh copie chaque fichier dans ~<login>/.ssh/authorized_keys.
+
+Ne JAMAIS mettre de clé privée ici (fichier sans .pub, ou .ppk PuTTY).
+
+Générer une clé sous Windows (PowerShell) :
+    ssh-keygen -t ed25519 -f $HOME\.ssh\projet_<login> -C <login>
+    -> copier $HOME\.ssh\projet_<login>.pub ici sous le nom <login>.pub
+
+Avec PuTTYgen : type EdDSA (Ed25519) > Generate > enregistrer le .ppk chez soi,
+puis copier le texte "Public key for pasting into OpenSSH authorized_keys file"
+dans un fichier <login>.pub ici.

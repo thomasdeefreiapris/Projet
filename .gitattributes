@@ -1,0 +1,7 @@
+# Fins de ligne Unix (LF) obligatoires : un script en CRLF ne s'exécute pas sous Linux
+* text=auto eol=lf
+*.sh text eol=lf
+*.csv text eol=lf
+*.conf text eol=lf
+*.pub text eol=lf
+config/** text eol=lf

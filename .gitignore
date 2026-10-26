@@ -1,0 +1,6 @@
+# Aucune clé privée ni secret dans le dépôt
+*.ppk
+*.key
+id_*
+projet_*
+!*.pub
